@@ -65,33 +65,25 @@ bool is_sum_possible(int n, int A[], int target_sum) {
 
 int main(int argc, char* argv[]) {
 
-    int N = 2;
-//    int* A = new int[N];
+    int N = 100; //Number of elements in array
+    int target_sum = 1024; //Target sum
 
-    int A[] = {7, 14};
-//    A[0] = 1;
-//    A[1] = 1;
+    int* A = new int[N];
 
     //Seed random number generator
-//    srand (time(NULL));
+    srand (time(NULL));
 
-    //Initialize cost array with random numbers
+    //Initialize array with random numbers
     for(int i = 0; i < N; ++i) {
-//        A[i] = rand() % 4 + (5*i)/2;
+        A[i] = rand() % 4;
     }
 
-    for(int i = 0; i < N; ++i) {
-        printf("A[%i]: %i\n", i, A[i]);
-    }
-
-    int target_sum = 300;
-
+    //Check if target number can be obtained from numbers in array
     bool sum_possible = is_sum_possible(N, A, target_sum);
 
+    //Print results
     printf("n: %i\nsum_possible: %i\n", N, sum_possible);
-
     printf("num_calls: %i\n", num_calls);
-
     printf("done\n");
 
     return 0;
